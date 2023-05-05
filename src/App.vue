@@ -48,7 +48,7 @@ function adicionar(itens) {
     novoItem.value = ''
   }
   function remover (index) {
-    itens.value.splice(index, 1)
+    novoItem.value.splice(index, 1)
   }
 
 </script>
@@ -57,7 +57,9 @@ function adicionar(itens) {
   
   
   <ul>
-    <li v-for="(itens, index) in listaProdutos" :key="index"> {{ item }} 
+    <li v-for="(itens, index) in listaProdutos" :key="novoItem.id"> {{ item }} 
+      <div>{{ novoItem.name }}</div>
+      <div>{{ novoItem.preco.toLocalestring('pt-br', { style: 'currency', currency: 'BRL'}) }}</div>
       <div>
         <button @click="adicionar">Adicionar</button> 
       </div>
