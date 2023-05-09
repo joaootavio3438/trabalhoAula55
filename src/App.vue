@@ -2,12 +2,12 @@
 import { ref } from 'vue'
 
 
-const novoItem = ref('')
+// const item = ref('')
 
 const listaProdutos = ref([
   {
     id: 1,
-    name: 'Peita',
+    name: 'Camisa',
     preco: 89.99,
     quantidade: 0
   },
@@ -31,7 +31,7 @@ const listaProdutos = ref([
   },
   {
     id: 5,
-    name: 'Correntinha',
+    name: 'Corrente de pescoço',
     preco: 40.00,
     quantidade: 0
   },
@@ -43,13 +43,13 @@ const listaProdutos = ref([
   },
 ])
 
-function adicionar(itens) {
-    itens.value.push(novoItem.value)
-    novoItem.value = ''
-  }
-  function remover (index) {
-    novoItem.value.splice(index, 1)
-  }
+// function adicionar(novoItem) {
+//     itens.value.push(novoItem.value)
+//     novoItem.value = ''
+//   }
+//   function remover (index) {
+//     novoItem.value.splice(index, 1)
+//   }
 
 </script>
 
@@ -57,9 +57,9 @@ function adicionar(itens) {
   
   
   <ul>
-    <li v-for="(itens, index) in listaProdutos" :key="novoItem.id"> {{ item }} 
-      <div>{{ novoItem.name }}</div>
-      <div>{{ novoItem.preco.toLocalestring('pt-br', { style: 'currency', currency: 'BRL'}) }}</div>
+    <li v-for="(item, index) in listaProdutos" :key="item.id"> {{ item }} 
+      <div>{{ item.name }}</div>
+      <div>{{ item.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'}) }}</div>
       <div>
         <button @click="adicionar">Adicionar</button> 
       </div>
